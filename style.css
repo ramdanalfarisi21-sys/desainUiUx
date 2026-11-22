@@ -1,0 +1,652 @@
+/* =========================================================================
+   1. RESET & PENGATURAN DASAR
+   box-sizing: border-box memastikan padding & border tidak menambah lebar elemen
+========================================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Membuat perpindahan halaman saat link navigasi diklik terasa halus */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.45;
+}
+
+/* Pembungkus utama agar lebar konten sejajar rapi di tengah layar */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* PENTING: Karena file ikon dari Figma berformat .jpg (punya latar putih),
+   mix-blend-mode: multiply membuat warna putih pada gambar menjadi transparan
+   sehingga menyatu mulus dengan warna background di belakangnya */
+.icon-blend {
+  mix-blend-mode: multiply;
+}
+
+/* =========================================================================
+   2. HERO BANNER & NAVBAR
+========================================================================= */
+.hero {
+  width: 100%;
+  min-height: 445px;
+  /* Memasang gambar latar belakang utama dan mengatur agar selalu penuh & center */
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.12)
+    ),
+    url('img/her0-utama.jpg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  /* Flexbox untuk memisahkan logo di kiri dan menu navigasi di kanan */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #111111;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.brand img,
+.navbar a img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 18px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: #1592e6;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.hero-content {
+  text-align: center;
+  margin: auto;
+  padding: 10px 20px 80px;
+}
+
+.hero-content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 6px;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.75);
+}
+
+.hero-content p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 18px;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.85);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: #1592e6;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0e7ac4;
+}
+
+/* =========================================================================
+   3. FEATURES SECTION (CSS GRID 3 KOLOM)
+========================================================================= */
+.features {
+  padding-top: 52px;
+  padding-bottom: 48px;
+}
+
+.features-grid {
+  /* Lebar dibatasi 760px & margin auto agar 3 ikon mengumpul proporsional di tengah */
+  max-width: 760px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.feature-item img {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222222;
+}
+
+/* =========================================================================
+   4. OUR FAVORITE MENU (CSS GRID 3 KOLOM x 4 BARIS)
+========================================================================= */
+.menu-section {
+  padding-top: 12px;
+  padding-bottom: 56px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.section-header p {
+  font-size: 13px;
+  color: #333333;
+}
+
+.menu-grid {
+  /* Membagi area menu menjadi 3 kolom dengan lebar yang sama besar (1fr) */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.menu-card {
+  background-color: #dcdcdc;
+  border-radius: 8px;
+  overflow: hidden;
+  /* Grid internal di dalam kartu: 50% kiri untuk foto, 50% kanan untuk teks & tombol */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 178px;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 178px;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-info {
+  padding: 12px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-info h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.menu-info p {
+  font-size: 10.5px;
+  color: #333333;
+  line-height: 1.35;
+}
+
+.menu-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.price-tag {
+  background-color: #1c1c1c;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
+.btn-add {
+  background-color: #1592e6;
+  color: #ffffff;
+  border: none;
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-add:hover {
+  background-color: #0e7ac4;
+}
+
+/* =========================================================================
+   5. OUR DESCRIPTION (CSS GRID 2 KOLOM ASIMETRIS)
+========================================================================= */
+.description-section {
+  padding-bottom: 56px;
+}
+
+.small-label {
+  text-align: center;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #222222;
+  margin-bottom: 20px;
+}
+
+.description-grid {
+  /* Kolom kiri tetap 265px untuk foto barista, kolom kanan mengambil sisa ruang (1fr) */
+  display: grid;
+  grid-template-columns: 265px 1fr;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.barista-box img {
+  width: 100%;
+  height: 100%;
+  min-height: 255px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.why-box {
+  background-color: #dcdcdc;
+  border-radius: 10px;
+  padding: 26px 32px;
+  /* position: relative menjadi patokan untuk posisi 'About Us ->' di pojok kanan bawah */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.why-box h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.why-box h4 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 10px;
+}
+
+.why-desc {
+  font-size: 12.5px;
+  color: #222222;
+  max-width: 630px;
+  margin-bottom: 14px;
+}
+
+.why-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.why-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #222222;
+}
+
+.why-list img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.about-link {
+  position: absolute;
+  right: 32px;
+  bottom: 22px;
+  text-decoration: none;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.about-link:hover {
+  color: #1592e6;
+}
+
+/* =========================================================================
+   6. TESTIMONI & CTA ORDER BAR
+========================================================================= */
+.testimoni-section {
+  padding-bottom: 34px;
+}
+
+.testimoni-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 56px;
+}
+
+.testimoni-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimoni-item .avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.testimoni-bubble {
+  background-color: #dcdcdc;
+  border-radius: 10px;
+  padding: 14px 16px;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+
+.user-name strong {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.verified-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.testimoni-bubble p {
+  font-size: 10.5px;
+  color: #222222;
+  line-height: 1.4;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 22px 0 24px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: 1.5px solid #222222;
+  display: inline-block;
+}
+
+.cta-bar {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.cta-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-text img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.cta-text span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.btn-order {
+  background-color: #1592e6;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 5px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.btn-order:hover {
+  background-color: #0e7ac4;
+}
+
+/* =========================================================================
+   7. FOOTER (GARIS TENGAH VERTIKAL & GARIS BAWAH HORIZONTAL PRESISI)
+========================================================================= */
+.footer {
+  width: 100%;
+  background-color: #d9d9d9;
+  padding: 22px 24px 20px;
+}
+
+.footer-wrapper {
+  max-width: 1052px;
+  margin: 0 auto;
+  /* Membagi footer jadi 2 bagian simetris (50% kiri, 50% kanan) */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Garis horizontal bawah yang lurus rata tengah */
+  border-bottom: 1px solid #333333;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  /* Garis vertikal tengah yang turun menyentuh garis horizontal bawah */
+  border-right: 1px solid #333333;
+  padding: 28px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.footer-left img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px 28px 26px 24px;
+  gap: 20px;
+}
+
+.footer-contact h4,
+.footer-social h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 10px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #222222;
+  margin-bottom: 8px;
+}
+
+.contact-row img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* =========================================================================
+   8. RESPONSIVE BREAKPOINTS (PENYESUAIAN TAMPILAN TABLET & HP)
+========================================================================= */
+@media (max-width: 960px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .description-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-link {
+    position: static;
+    margin-top: 16px;
+    align-self: flex-end;
+  }
+
+  .testimoni-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-left {
+    border-right: none;
+    border-bottom: 1px solid #333333;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .features-grid,
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card {
+    height: auto;
+    min-height: 165px;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Sky Coffee</title>
+    <!--font dari google agar menyesuaikan yang dari figma-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400,500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--header dan hero banner, tag header dan nav adalah tag semantik
+    untuk kepala halaman dan menu-->
+    <header class="hero" id="home">
+        <nav class="navbar">
+      <a href="#home" class="brand">
+        <img src="img/icon-coffee.jpg.jpg" alt="Logo Blue Sky Coffee" class="icon-blend">
+        <span>Blue Sky Coffee</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="#about">Explore</a></li>
+      </ul>
+    </nav>
+        <!--teks utama ditengah gambar-->
+        <div class="hero-content">
+            <h1>Blue Sky Coffee</h1>
+            <p>Crafted Coffee And Refreshing Drinks Made Daily</p>
+            <a href="#menu" class="btn-primary">Explore Drink Blue Sky</a>
+        </div>
+    </header>
+    <!--bagian yang menampilkan daftar keunggulan produk, untuk menyusun 3 kolom yang sejajar-->
+    <section class="features container">
+        <div class="features-grid">
+            <div class="feature-item">
+                <img src="img/crafted.jpg.jpg" alt="Expertly Crafted" class="icon-blend">
+                <p>Fresh Ingredients</p>
+            </div>
+            <div class="feature-item">
+                <img src="img/crafted.jpg.jpg" alt="Expertly Crafted" class="icon-blend">
+                <p>Expertly Crafted</p>
+            </div>
+            <div class="feature-item">
+                <img src="img/quality.jpg.jpg" alt="Best Quality" class="icon-blend">
+                <p>Best Quality</p>
+            </div>
+        </div>
+    </section>
+    <!--daftar menu favorit, tag article dipakai karena setiap kartu menu memiliki  komponen
+    tersendiri-->
+    <section class="menu-section container" id="menu">
+        <div class="section-header">
+            <h2>Our Favorite Menu</h2>
+            <p>Discover the best blends from Blue Sky Coffeee</p>
+        </div>
+
+        <div class="menu-grid">
+            <!--baris/kolom pertama-->
+            <article class="menu-card">
+                <img src="img/matcha.jpg.jpg" alt="Iced Matcha Latte" class="menu-img">
+                <div class="menu-info">
+                    <div>
+                        <h3>Iced Matcha Latte</h3>
+                        <p>Matcha + Susu Creamy + Es Batu</p>
+                    </div>
+                    <div class="menu-actions">
+                        <div class="price-tag">Rp.21.000</div>
+                        <button type="button" class="btn-add">+ Add Item</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img src="img/coklat.jpg.jpg" alt="Choco Cookies Frappe" class="menu-img">
+                <div class="menu-info">
+                    <div>
+                        <h3>Choco Cookies Frappe</h3>
+                        <p>Chocolate + Biskuit + Chilled Cream</p>
+                    </div>
+                    <div class="menu-actions">
+                        <div class="price-tag">Rp.24.500</div>
+                        <button type="button" class="btn-add">+ Add Item</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="menu-card">
+                <img src="img/blubery.jpg.jpg" alt="Berry Cream Blend" class="menu-img">
+                <div class="menu-info">
+                    <div>
+                        <h3>Berry Cream Blend</h3>
+                        <p>Berries + Milk + Whipped Cream</p>
+                    </div>
+                    <div class="menu-actions">
+                        <div class="price-tag">Rp.18.000</div>
+                        <button type="button" class="btn-add">+ Add Item</button>
+                    </div>
+                </div>
+            </article>
+            <!--baris/kolom yang kedua-->
+            <article class="menu-card">
+        <img src="img/buah naga.jpg.jpg" alt="Dragon Fruit Smoothie" class="menu-img">
+        <div class="menu-info">
+          <div>
+            <h3>Dragon Fruit Smoothie</h3>
+            <p>Dragon Fruit + Lime + Ice Cubes</p>
+          </div>
+          <div class="menu-actions">
+            <div class="price-tag">Rp.20.500</div>
+            <button type="button" class="btn-add">+ Add Item</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="img/es str.jpg.jpg" alt="Strawberry Cream Frappe" class="menu-img">
+        <div class="menu-info">
+          <div>
+            <h3>Strawberry Cream Frappe</h3>
+            <p>Strawberries + Cream + Cold Milk</p>
+          </div>
+          <div class="menu-actions">
+            <div class="price-tag">Rp.23.000</div>
+            <button type="button" class="btn-add">+ Add Item</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="img/buah-naga-pokat.jpg.jpg" alt="Avocado Dragon Blend" class="menu-img">
+        <div class="menu-info">
+          <div>
+            <h3>Avocado Dragon Blend</h3>
+            <p>Avocado + Dragon Fruit + Milk</p>
+          </div>
+          <div class="menu-actions">
+            <div class="price-tag">Rp.22.500</div>
+            <button type="button" class="btn-add">+ Add Item</button>
+          </div>
+        </div>
+      </article>
+      <!--baris/kolom yang ke 3-->
+      <article class="menu-card">
+        <img src="img/ayam-geprek.jpg.jpg" alt="Crispy Chicken Rice" class="menu-img">
+        <div class="menu-info">
+            <div>
+                <h3>Crispy Chicken Rice</h3>
+                <p>Crispy Chicken + Warm Rice + Chili</p>
+            </div>
+            <div class="menu-actions">
+                <div class="price-tag">Rp.10.500</div>
+                <button type="button" class="btn-add">+ Add Item</button>
+            </div>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="img/burger.jpg.jpg" alt="Classic Beef Burger" class="menu-img">
+        <div class="menu-info">
+          <div>
+            <h3>Classic Beef Burger</h3>
+            <p>Beef Patty + Cheese + Fries</p>
+          </div>
+          <div class="menu-actions">
+            <div class="price-tag">Rp.22.000</div>
+            <button type="button" class="btn-add">+ Add Item</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="img/pitza.jpg.jpg" alt="Cheesy Pepperoni Pizza" class="menu-img">
+        <div class="menu-info">
+            <div>
+                <h3>Cheesy Pepperoni Pizza</h3>
+                <p>Melted Cheese + Savory Topping + Crust</p>
+            </div>
+            <div class="menu-actions">
+                <div class="price-tag">Rp.32.500</div>
+                <button type="button" class="btn-add">+ Add Item</button>
+            </div>
+        </div>
+      </article>
+      <!--baris/kolom yang terakhir guys-->
+      <article class="menu-card">
+        <img src="img/ikan-bakar.jpg.jpg" alt="Signature Grilled Fish" class="menu-img">
+        <div class="menu-info">
+          <div>
+            <h3>Signature Grilled Fish</h3>
+            <p>Grilled Fish + Steamed Rice + Chili</p>
+          </div>
+          <div class="menu-actions">
+            <div class="price-tag">Rp.45.000</div>
+            <button type="button" class="btn-add">+ Add Item</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="img/soto.jpg.jpg" alt="Warm Chicken Soto" class="menu-img">
+        <div class="menu-info">
+          <div>
+            <h3>Warm Chicken Soto</h3>
+            <p>Shredded Chicken + Savory Broth + Lime</p>
+          </div>
+          <div class="menu-actions">
+            <div class="price-tag">Rp.20.000</div>
+            <button type="button" class="btn-add">+ Add Item</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="menu-card">
+        <img src="img/sushi.jpg.jpg" alt="Seafood Sushi Platter" class="menu-img">
+        <div class="menu-info">
+          <div>
+            <h3>Seafood Sushi Platter</h3>
+            <p>Assorted Sushi + Fresh Topping + Soy</p>
+          </div>
+          <div class="menu-actions">
+            <div class="price-tag">Rp.65.500</div>
+            <button type="button" class="btn-add">+ Add Item</button>
+          </div>
+        </div>
+      </article>
+        </div>
+    </section>
+
+    <!--bagian luar deskirpsi, css grid 2 kolom: foto kiri, dan box kanan-->
+    <section class="description-section container" id="about">
+        <p class="small-label">Our Description</p>
+
+        <div class="description-grid">
+            <!--foto barista dikolom kiri-->
+            <div class="barista-box">
+                <img src="img/barista.jpg.jpg" alt="Barista Blue Sky Coffee">
+            </div>
+            <!--kotak penjelasan 'Why choose us?'-->
+            <div class="why-box">
+                <h3>Why choose us?</h3>
+                <h4>becauce our coffee is more than just a drink</h4>
+                <p class="why-desc">
+                    At Coffee Langit Biru, we offer a coffee experience that goes beyond just
+                    taste-featuring premium ingredients, experienced baristas, and a 
+                    comfortable setting.
+                </p>
+                <!--icons centang-->
+                <ul class="why-list">
+                    <li>
+                        <img src="img/hugeicons_tick-04.jpg" alt="Check" class="icon-blend">
+                        <span>premium and fresh ingredients</span>
+                    </li>
+                    <li>
+                        <img src="img/hugeicons_tick-04.jpg" alt="Check" class="icon-blend">
+                        <span>Experienced Barista</span>
+                    </li>
+                    <li>
+                        <img src="img/hugeicons_tick-04.jpg" alt="Check" class="icon-blend">
+                        <span>comfortable and Instagrammable place</span>
+                    </li>
+                </ul>
+
+                <a href="#footer" class="about-link">About Us &rarr;</a>
+            </div>
+        </div>
+    </section>
+    <!--hasil testimoni dan ajakan order-->
+    <section class="testimoni-section container" id="order">
+        <p class="small-label">Testimoni</p>
+
+        <div class="testimoni-grid">
+            <div class="testimoni-item">
+                <img src="img/testimoni.jpg.jpg" alt="Alex Wijayanto" class="avatar">
+                <div class="testimoni-bubble">
+                    <div class="user-name">
+                        <strong>Alex Wijayanto</strong>
+                        <img src="img/centang-biru.jpg.jpg" alt="Verified" class="verified-icon icon-blend">
+                    </div>
+                    <p>The coffee is really good and the place is comfortable too-you have to try it, i guarantee you'll be hooked</p>
+                </div>
+            </div>
+
+            <div class="testimoni-item">
+                <img src="img/testimoni1.jpg.jpg" alt="William" class="avatar">
+                <div class="testimoni-bubble">
+                    <div class="user-name">
+                        <strong>William</strong>
+                        <img src="img/centang-biru.jpg.jpg" alt="Verified" class="verified-icon icon-blend">
+                    </div>
+                    <p>The plase is very comfortable, pleasant and clean; the products served are also premium</p>
+                </div>
+            </div>
+        </div>
+        <!--tiga titik dorasi dibawah testimoni-->
+        <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <!--ajakan untuk memesan/order now-->
+            <div class="cta-bar">
+      <div class="cta-text">
+        <img src="img/icon-coffee.jpg.jpg" alt="Coffee Icon" class="icon-blend">
+        <span>Come on, enjoy your favorite coffee right now!</span>
+      </div>
+      <a href="#menu" class="btn-order">Order Now &rarr;</a>
+    </div>
+  </section>
+
+  <!--Footer disusun pakai CSS Grid jadi 2 bagian yang sama besar (simetris), 
+  dengan garis pemisah di tengah dan garis di bawah-->
+  <footer class="footer" id="footer">
+    <div class="footer-wrapper">
+      <!-- Belahan Kiri (50%): Logo & Nama Brand -->
+      <div class="footer-left">
+        <img src="img/icon-coffee.jpg.jpg" alt="Blue Sky Coffee" class="icon-blend">
+        <span>Blue Sky Coffee</span>
+      </div>
+
+      <!-- Belahan Kanan (50%): Contact Mee & Follow Us -->
+      <div class="footer-right">
+        <div class="footer-contact">
+          <h4>Contact Mee</h4>
+          <div class="contact-row">
+            <img src="img/hugeicons_google-maps.jpg" alt="Alamat" class="icon-blend">
+            <span>Jl. Langit No. 2, Jakarta barat</span>
+          </div>
+          <div class="contact-row">
+            <img src="img/telphone.jpg.jpg" alt="Telepon" class="icon-blend">
+            <span>(021)01234567</span>
+          </div>
+        </div>
+
+        <div class="footer-social">
+          <h4>Follow us</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">
+              <img src="img/instagram.jpg.jpg" alt="Instagram" class="icon-blend">
+            </a>
+            <a href="#" aria-label="WhatsApp">
+              <img src="img/wa.jpg.jpg" alt="WhatsApp" class="icon-blend">
+            </a>
+            <a href="#" aria-label="Facebook">
+              <img src="img/facebook.jpg.jpg" alt="Facebook" class="icon-blend">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
